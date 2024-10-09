@@ -11,21 +11,36 @@ const WhiteNoisePlayer: React.FC<WhiteNoisePlayerProps> = ({ noiseType, isPlayin
     const audioContextRef = useRef<AudioContext | null>(null);
     const sourceNodeRef = useRef<AudioBufferSourceNode | null>(null);
     const gainNodeRef = useRef<GainNode | null>(null);
+    const [audioPermission, setAudioPermission] = useState<boolean>(false);
 
     useEffect(() => {
-        if (isPlaying) {
+        if (audioPermission && isPlaying && audioContextRef.current) {
             playNoise();
         } else {
             stopNoise();
         }
-        return () => stopNoise();
-    }, [isPlaying, noiseType]);
+    }, [isPlaying, noiseType, audioPermission]);
 
-    const playNoise = () => {
-        stopNoise();
+    const initAudioContext = () => {
         if (!audioContextRef.current) {
             audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)();
+            setAudioPermission(true);
         }
+    };
+
+    const handlePlayPause = () => {
+        if (!audioPermission) {
+            if (window.confirm("소리 재생을 허용하시겠습니까?")) {
+                initAudioContext();
+            }
+        } else {
+            onPlayPause();
+        }
+    };
+
+    const playNoise = () => {
+        if (!audioContextRef.current) return;
+        stopNoise();
 
         const bufferSize = 2 * audioContextRef.current.sampleRate;
         const noiseBuffer = audioContextRef.current.createBuffer(1, bufferSize, audioContextRef.current.sampleRate);
@@ -92,7 +107,7 @@ const WhiteNoisePlayer: React.FC<WhiteNoisePlayerProps> = ({ noiseType, isPlayin
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             className="bg-white text-purple-500 rounded-full p-8 cursor-pointer"
-            onClick={onPlayPause}
+            onClick={handlePlayPause}
         >
             {isPlaying ? (
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
