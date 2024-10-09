@@ -30,9 +30,10 @@ export default function Home() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="flex flex-col items-center justify-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-gradient-to-br from-purple-500 to-pink-500 text-white font-[family-name:var(--font-geist-sans)]"
+      className="flex flex-col items-center justify-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-gradient-to-br from-purple-500 to-pink-500 text-white font-[family-name:var(--font-geist-sans)] z-10"
     >
       <ParticlesBackground />
+
       <motion.h1
         initial={{ y: -50 }}
         animate={{ y: 0 }}
@@ -42,7 +43,7 @@ export default function Home() {
         Tranquil Tones
       </motion.h1>
 
-      <div className="flex flex-wrap justify-center gap-4 mb-8">
+      <div className="flex flex-wrap justify-center gap-4 mb-8 z-10">
         {noiseTypes.map((noise) => (
           <motion.button
             key={noise.id}
@@ -59,17 +60,20 @@ export default function Home() {
         ))}
       </div>
 
-      <WhiteNoisePlayer noiseType={selectedNoise} isPlaying={isPlaying} onPlayPause={handlePlayPause} />
+      <div className="z-10">
+        <WhiteNoisePlayer noiseType={selectedNoise} isPlaying={isPlaying} onPlayPause={handlePlayPause} />
+      </div>
 
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5 }}
-        className="text-center text-lg max-w-2xl"
+        className="text-center text-lg max-w-2xl z-10"
       >
         Immerse yourself in soothing ambient sounds. Choose your preferred noise type and let the calming waves wash over you.
       </motion.p>
       <DisplayLudgi />
+
     </motion.div>
   );
 }
