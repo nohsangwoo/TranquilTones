@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import WhiteNoisePlayer from "./components/WhiteNoisePlayer";
 import DisplayLudgi from "./components/DisplayLudgi";
+import ParticlesBackground from "./components/ParticlesBackground";
 
 const noiseTypes = [
   { id: "white", name: "White Noise" },
@@ -31,6 +32,7 @@ export default function Home() {
       transition={{ duration: 1 }}
       className="flex flex-col items-center justify-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-gradient-to-br from-purple-500 to-pink-500 text-white font-[family-name:var(--font-geist-sans)]"
     >
+      <ParticlesBackground />
       <motion.h1
         initial={{ y: -50 }}
         animate={{ y: 0 }}
