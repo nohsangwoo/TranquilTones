@@ -2,11 +2,14 @@
 
 # deployed at https://tranquil-tones.ludgi.ai/
 
+# sitemap: https://tranquil-tones.ludgi.ai/sitemap.xml
+
+# preview
+
+![alt text](image.png)
+![alt text](image-1.png)
+
 Tranquil Tones is a simple and intuitive web application that provides various white noise options to help enhance focus and improve sleep. Designed for ease of use across devices, this project aims to improve productivity during repetitive tasks or studying environments.
-
-## WhiteWave - White Noise Generator 🌊
-
-WhiteWave is a simple and intuitive web application that provides various white noise options to help enhance focus and improve sleep. Designed for ease of use across devices, this project aims to improve productivity during repetitive tasks or studying environments.
 
 ### Key Features ✨
 

@@ -37,7 +37,9 @@ export const metadata: Metadata = {
     "focus music, 집중 음악, 专注音乐, музыка для концентрации",
     "study sounds, 공부 소리, 学习声音, звуки для учебы",
     "work from home, 재택근무, 在家工作, работа из дома",
-    "noise masking, 소음 마스킹, 噪音掩蔽, маскировка шума"
+    "noise masking, 소음 마스킹, 噪音掩蔽, маскировка шума",
+    "ludgi", "ludgi ai", "ludgi ai white noise", "ludgi ai white noise generator", "ludgi ai white noise app",
+
   ].join(", "),
   openGraph: {
     title: "Tranquil Tones - Immersive White Noise Experience",
@@ -58,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Tranquil Tones - Your Personal Oasis of Calm",
     description: "Elevate your environment with soothing white noise and ambient sounds. Perfect for work, study, sleep, and relaxation.",
-    images: ["https://tranquil-tones.example.com/logo.webp"],
+    images: ["https://tranquil-tones.ludgi.ai/logo.webp"],
   },
   robots: {
     index: true,

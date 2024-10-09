@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import WhiteNoisePlayer from "./components/WhiteNoisePlayer";
+import DisplayLudgi from "./components/DisplayLudgi";
 
 const noiseTypes = [
   { id: "white", name: "White Noise" },
@@ -47,8 +48,8 @@ export default function Home() {
             whileTap={{ scale: 0.95 }}
             onClick={() => handleNoiseChange(noise.id)}
             className={`px-4 py-2 rounded-full ${selectedNoise === noise.id
-                ? "bg-white text-purple-500"
-                : "bg-purple-700 text-white"
+              ? "bg-white text-purple-500"
+              : "bg-purple-700 text-white"
               } transition-colors duration-300`}
           >
             {noise.name}
@@ -66,6 +67,7 @@ export default function Home() {
       >
         Immerse yourself in soothing ambient sounds. Choose your preferred noise type and let the calming waves wash over you.
       </motion.p>
+      <DisplayLudgi />
     </motion.div>
   );
 }
