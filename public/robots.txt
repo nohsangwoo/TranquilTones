@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /private/
+
+# Host
+Host: https://tranquil-tones.ludgi.ai
+
+# Sitemaps
+Sitemap: https://tranquil-tones.ludgi.ai/sitemap.xml
