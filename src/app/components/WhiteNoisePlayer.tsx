@@ -30,7 +30,7 @@ const WhiteNoisePlayer: React.FC<WhiteNoisePlayerProps> = ({ noiseType, isPlayin
 
     const handlePlayPause = () => {
         if (!audioPermission) {
-            if (window.confirm("소리 재생을 허용하시겠습니까?")) {
+            if (window.confirm("Would you like to allow sound playback?")) {
                 initAudioContext();
             }
         } else {
